@@ -9,8 +9,8 @@
  * @link       https://laccadive.io/
  * @since      1.0.0
  *
- * @package    Wc_Guest_Checkout_Individual_Product
- * @subpackage Wc_Guest_Checkout_Individual_Product/includes
+ * @package    Wc_Guest_Checkout_Single_Product
+ * @subpackage Wc_Guest_Checkout_Single_Product/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Wc_Guest_Checkout_Individual_Product
- * @subpackage Wc_Guest_Checkout_Individual_Product/includes
+ * @package    Wc_Guest_Checkout_Single_Product
+ * @subpackage Wc_Guest_Checkout_Single_Product/includes
  * @author     Hussain Thajutheen <hussain@laccadive.io>
  */
-class Wc_Guest_Checkout_Individual_Product_i18n {
+class Wc_Guest_Checkout_Single_Product_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Wc_Guest_Checkout_Individual_Product_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'wc-guest-checkout-individual-product',
+			'wc-guest-checkout-single-product',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

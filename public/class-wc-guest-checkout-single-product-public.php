@@ -1,26 +1,26 @@
 <?php
 
 /**
- * The admin-specific functionality of the plugin.
+ * The public-facing functionality of the plugin.
  *
  * @link       https://laccadive.io/
  * @since      1.0.0
  *
- * @package    Wc_Guest_Checkout_Individual_Product
- * @subpackage Wc_Guest_Checkout_Individual_Product/admin
+ * @package    Wc_Guest_Checkout_Single_Product
+ * @subpackage Wc_Guest_Checkout_Single_Product/public
  */
 
 /**
- * The admin-specific functionality of the plugin.
+ * The public-facing functionality of the plugin.
  *
  * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
+ * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Wc_Guest_Checkout_Individual_Product
- * @subpackage Wc_Guest_Checkout_Individual_Product/admin
+ * @package    Wc_Guest_Checkout_Single_Product
+ * @subpackage Wc_Guest_Checkout_Single_Product/public
  * @author     Hussain Thajutheen <hussain@laccadive.io>
  */
-class Wc_Guest_Checkout_Individual_Product_Admin {
+class Wc_Guest_Checkout_Single_Product_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -44,7 +44,7 @@ class Wc_Guest_Checkout_Individual_Product_Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
+	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
@@ -55,7 +55,7 @@ class Wc_Guest_Checkout_Individual_Product_Admin {
 	}
 
 	/**
-	 * Register the stylesheets for the admin area.
+	 * Register the stylesheets for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
@@ -65,20 +65,20 @@ class Wc_Guest_Checkout_Individual_Product_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Wc_Guest_Checkout_Individual_Product_Loader as all of the hooks are defined
+		 * defined in Wc_Guest_Checkout_Single_Product_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Wc_Guest_Checkout_Individual_Product_Loader will then create the relationship
+		 * The Wc_Guest_Checkout_Single_Product_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wc-guest-checkout-individual-product-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wc-guest-checkout-single-product-public.css', array(), $this->version, 'all' );
 
 	}
 
 	/**
-	 * Register the JavaScript for the admin area.
+	 * Register the JavaScript for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
@@ -88,15 +88,15 @@ class Wc_Guest_Checkout_Individual_Product_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Wc_Guest_Checkout_Individual_Product_Loader as all of the hooks are defined
+		 * defined in Wc_Guest_Checkout_Single_Product_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Wc_Guest_Checkout_Individual_Product_Loader will then create the relationship
+		 * The Wc_Guest_Checkout_Single_Product_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wc-guest-checkout-individual-product-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wc-guest-checkout-single-product-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 

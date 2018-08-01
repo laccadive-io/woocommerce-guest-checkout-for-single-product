@@ -10,18 +10,18 @@
  *
  * @link              https://laccadive.io/
  * @since             1.0.0
- * @package           Wc_Guest_Checkout_Individual_Product
+ * @package           Wc_Guest_Checkout_Single_Product
  *
  * @wordpress-plugin
- * Plugin Name:       WooCommerce Guest Checkout for Individual Product
- * Plugin URI:        https://github.com/laccadive-io/woocommerce-guest-checkout-for-individual-product
- * Description:       A simple wooCommerce plugin forked from contemplate. It enables for individuals Guest Checkout for Individual Product through a checkbox from the product page.
+ * Plugin Name:       WooCommerce Guest Checkout for Single Product
+ * Plugin URI:        https://github.com/laccadive-io/woocommerce-guest-checkout-for-single-product
+ * Description:       A simple wooCommerce plugin forked from contemplate. It enables for users Guest Checkout for Single Product through a checkbox from the product page.
  * Version:           1.0.0
  * Author:            Hussain Thajutheen
  * Author URI:        https://laccadive.io/
- * License:           GPL-2.0+
+ * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       wc-guest-checkout-individual-product
+ * Text Domain:       wc-guest-checkout-single-product
  * Domain Path:       /languages
  * Tested up to:      4.9.7
  */
@@ -36,36 +36,36 @@ if (!defined('WPINC')) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('WC_GUEST_CHECKOUT_INDIVIDUAL', '1.0.0');
+define('WC_GUEST_CHECKOUT_SINGLE', '1.0.0');
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-wc-guest-checkout-individual-product-activator.php
+ * This action is documented in includes/class-wc-guest-checkout-single-product-activator.php
  */
-function activate_wc_guest_checkout_individual_product()
+function activate_wc_guest_checkout_single_product()
 {
-    require_once plugin_dir_path(__FILE__) . 'includes/class-wc-guest-checkout-individual-product-activator.php';
-    Wc_Guest_Checkout_Individual_Product_Activator::activate();
+    require_once plugin_dir_path(__FILE__) . 'includes/class-wc-guest-checkout-single-product-activator.php';
+    Wc_Guest_Checkout_Single_Product_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-wc-guest-checkout-individual-product-deactivator.php
+ * This action is documented in includes/class-wc-guest-checkout-single-product-deactivator.php
  */
-function deactivate_wc_guest_checkout_individual_product()
+function deactivate_wc_guest_checkout_single_product()
 {
-    require_once plugin_dir_path(__FILE__) . 'includes/class-wc-guest-checkout-individual-product-deactivator.php';
-    Wc_Guest_Checkout_Individual_Product_Deactivator::deactivate();
+    require_once plugin_dir_path(__FILE__) . 'includes/class-wc-guest-checkout-single-product-deactivator.php';
+    Wc_Guest_Checkout_Single_Product_Deactivator::deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_wc_guest_checkout_individual_product');
-register_deactivation_hook(__FILE__, 'deactivate_wc_guest_checkout_individual_product');
+register_activation_hook(__FILE__, 'activate_wc_guest_checkout_single_product');
+register_deactivation_hook(__FILE__, 'deactivate_wc_guest_checkout_single_product');
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path(__FILE__) . 'includes/class-wc-guest-checkout-individual-product.php';
+require plugin_dir_path(__FILE__) . 'includes/class-wc-guest-checkout-single-product.php';
 
 /**
  * Begins execution of the plugin.
@@ -76,22 +76,22 @@ require plugin_dir_path(__FILE__) . 'includes/class-wc-guest-checkout-individual
  *
  * @since    1.0.0
  */
-function run_wc_guest_checkout_individual_product()
+function run_wc_guest_checkout_single_product()
 {
 
-    $plugin = new Wc_Guest_Checkout_Individual_Product();
+    $plugin = new Wc_Guest_Checkout_Single_Product();
     $plugin->run();
 
 }
-run_wc_guest_checkout_individual_product();
+run_wc_guest_checkout_single_product();
 
 /*----------------------------------------------------------
-Woocommerce - Allow Guest Checkout for Individual Products
+Woocommerce - Allow Guest Checkout for Single Products
 -----------------------------------------------------------*/
 
 // Display Guest Checkout Field
-add_action('woocommerce_product_options_general_product_data', 'wc_gcip_add_custom_general_fields');
-function wc_gcip_add_custom_general_fields()
+add_action('woocommerce_product_options_general_product_data', 'wc_gcsp_add_custom_general_fields');
+function wc_gcsp_add_custom_general_fields()
 {
     global $woocommerce, $post;
 
@@ -112,16 +112,16 @@ function wc_gcip_add_custom_general_fields()
 }
 
 // Save Guest Checkout Field
-add_action('woocommerce_process_product_meta', 'wc_gcip_add_custom_general_fields_save', 10, 2);
-function wc_gcip_add_custom_general_fields_save($post_id)
+add_action('woocommerce_process_product_meta', 'wc_gcsp_add_custom_general_fields_save', 10, 2);
+function wc_gcsp_add_custom_general_fields_save($post_id)
 {
     $woocommerce_checkbox = isset($_POST['_allow_guest_checkout']) ? 'yes' : 'no';
     update_post_meta($post_id, '_allow_guest_checkout', $woocommerce_checkbox);
 }
 
 // Enable Guest Checkout on Certain products
-add_filter('pre_option_woocommerce_enable_guest_checkout', 'wc_gcip_enable_guest_checkout_based_on_product');
-function wc_gcip_enable_guest_checkout_based_on_product($value)
+add_filter('pre_option_woocommerce_enable_guest_checkout', 'wc_gcsp_enable_guest_checkout_based_on_product');
+function wc_gcsp_enable_guest_checkout_based_on_product($value)
 {
 
     if (WC()->cart) {

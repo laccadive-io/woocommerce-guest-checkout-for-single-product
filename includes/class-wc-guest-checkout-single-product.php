@@ -9,8 +9,8 @@
  * @link       https://laccadive.io/
  * @since      1.0.0
  *
- * @package    Wc_Guest_Checkout_Individual_Product
- * @subpackage Wc_Guest_Checkout_Individual_Product/includes
+ * @package    Wc_Guest_Checkout_Single_Product
+ * @subpackage Wc_Guest_Checkout_Single_Product/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Wc_Guest_Checkout_Individual_Product
- * @subpackage Wc_Guest_Checkout_Individual_Product/includes
+ * @package    Wc_Guest_Checkout_Single_Product
+ * @subpackage Wc_Guest_Checkout_Single_Product/includes
  * @author     Hussain Thajutheen <hussain@laccadive.io>
  */
-class Wc_Guest_Checkout_Individual_Product {
+class Wc_Guest_Checkout_Single_Product {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Wc_Guest_Checkout_Individual_Product {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Wc_Guest_Checkout_Individual_Product_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Wc_Guest_Checkout_Single_Product_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -72,7 +72,7 @@ class Wc_Guest_Checkout_Individual_Product {
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'wc-guest-checkout-individual-product';
+		$this->plugin_name = 'wc-guest-checkout-single-product';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class Wc_Guest_Checkout_Individual_Product {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Wc_Guest_Checkout_Individual_Product_Loader. Orchestrates the hooks of the plugin.
-	 * - Wc_Guest_Checkout_Individual_Product_i18n. Defines internationalization functionality.
-	 * - Wc_Guest_Checkout_Individual_Product_Admin. Defines all hooks for the admin area.
-	 * - Wc_Guest_Checkout_Individual_Product_Public. Defines all hooks for the public side of the site.
+	 * - Wc_Guest_Checkout_Single_Product_Loader. Orchestrates the hooks of the plugin.
+	 * - Wc_Guest_Checkout_Single_Product_i18n. Defines internationalization functionality.
+	 * - Wc_Guest_Checkout_Single_Product_Admin. Defines all hooks for the admin area.
+	 * - Wc_Guest_Checkout_Single_Product_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +103,33 @@ class Wc_Guest_Checkout_Individual_Product {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wc-guest-checkout-individual-product-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wc-guest-checkout-single-product-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wc-guest-checkout-individual-product-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wc-guest-checkout-single-product-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wc-guest-checkout-individual-product-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wc-guest-checkout-single-product-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wc-guest-checkout-individual-product-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wc-guest-checkout-single-product-public.php';
 
-		$this->loader = new Wc_Guest_Checkout_Individual_Product_Loader();
+		$this->loader = new Wc_Guest_Checkout_Single_Product_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Wc_Guest_Checkout_Individual_Product_i18n class in order to set the domain and to register the hook
+	 * Uses the Wc_Guest_Checkout_Single_Product_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class Wc_Guest_Checkout_Individual_Product {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Wc_Guest_Checkout_Individual_Product_i18n();
+		$plugin_i18n = new Wc_Guest_Checkout_Single_Product_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,7 +152,7 @@ class Wc_Guest_Checkout_Individual_Product {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Wc_Guest_Checkout_Individual_Product_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Wc_Guest_Checkout_Single_Product_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -168,7 +168,7 @@ class Wc_Guest_Checkout_Individual_Product {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Wc_Guest_Checkout_Individual_Product_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Wc_Guest_Checkout_Single_Product_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -199,7 +199,7 @@ class Wc_Guest_Checkout_Individual_Product {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Wc_Guest_Checkout_Individual_Product_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Wc_Guest_Checkout_Single_Product_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

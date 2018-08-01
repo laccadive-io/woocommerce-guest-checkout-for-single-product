@@ -6,8 +6,8 @@
  * @link       https://laccadive.io/
  * @since      1.0.0
  *
- * @package    Wc_Guest_Checkout_Individual_Product
- * @subpackage Wc_Guest_Checkout_Individual_Product/includes
+ * @package    Wc_Guest_Checkout_Single_Product
+ * @subpackage Wc_Guest_Checkout_Single_Product/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Wc_Guest_Checkout_Individual_Product
- * @subpackage Wc_Guest_Checkout_Individual_Product/includes
+ * @package    Wc_Guest_Checkout_Single_Product
+ * @subpackage Wc_Guest_Checkout_Single_Product/includes
  * @author     Hussain Thajutheen <hussain@laccadive.io>
  */
-class Wc_Guest_Checkout_Individual_Product_Activator {
+class Wc_Guest_Checkout_Single_Product_Activator {
 
 	/**
 	 * Short Description. (use period)

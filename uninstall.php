@@ -22,7 +22,7 @@
  * @link       https://laccadive.io/
  * @since      1.0.0
  *
- * @package    Wc_Guest_Checkout_Individual_Product
+ * @package    Wc_Guest_Checkout_Single_Product
  */
 
 // If uninstall not called from WordPress, then exit.

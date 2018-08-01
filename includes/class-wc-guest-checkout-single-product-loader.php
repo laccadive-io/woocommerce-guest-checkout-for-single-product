@@ -6,8 +6,8 @@
  * @link       https://laccadive.io/
  * @since      1.0.0
  *
- * @package    Wc_Guest_Checkout_Individual_Product
- * @subpackage Wc_Guest_Checkout_Individual_Product/includes
+ * @package    Wc_Guest_Checkout_Single_Product
+ * @subpackage Wc_Guest_Checkout_Single_Product/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Wc_Guest_Checkout_Individual_Product
- * @subpackage Wc_Guest_Checkout_Individual_Product/includes
+ * @package    Wc_Guest_Checkout_Single_Product
+ * @subpackage Wc_Guest_Checkout_Single_Product/includes
  * @author     Hussain Thajutheen <hussain@laccadive.io>
  */
-class Wc_Guest_Checkout_Individual_Product_Loader {
+class Wc_Guest_Checkout_Single_Product_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.
