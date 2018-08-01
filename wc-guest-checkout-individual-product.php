@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       WooCommerce Guest Checkout for Individual Product
  * Plugin URI:        https://github.com/laccadive-io/woocommerce-guest-checkout-for-individual-product
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       A simple wooCommerce plugin forked from contemplate. It enables for individuals Guest Checkout for Individual Product through a checkbox from the product page.
  * Version:           1.0.0
  * Author:            Hussain Thajutheen
  * Author URI:        https://laccadive.io/
@@ -23,6 +23,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wc-guest-checkout-individual-product
  * Domain Path:       /languages
+ * Tested up to:      4.9.7
  */
 
 // If this file is called directly, abort.
@@ -100,7 +101,8 @@ function wc_gcip_add_custom_general_fields()
     woocommerce_wp_checkbox(
         array(
             'id' => '_allow_guest_checkout',
-            'wrapper_class' => array('show_if_simple', 'show_if_variable', 'show_if_grouped', 'show_if_external', 'show_if_booking'),
+            //'wrapper_class' => 'show_if_simple',
+            'wrapper_class' => json_encode(array('show_if_simple', 'show_if_variable', 'show_if_grouped', 'show_if_external', 'show_if_booking')),
             'label' => __('Checkout', 'woocommerce'),
             'description' => __('Allow Guest Checkout', 'woocommerce'),
         )
@@ -110,7 +112,7 @@ function wc_gcip_add_custom_general_fields()
 }
 
 // Save Guest Checkout Field
-add_action('woocommerce_process_product_meta', 'wc_gcip_add_custom_general_fields_save');
+add_action('woocommerce_process_product_meta', 'wc_gcip_add_custom_general_fields_save', 10, 2);
 function wc_gcip_add_custom_general_fields_save($post_id)
 {
     $woocommerce_checkbox = isset($_POST['_allow_guest_checkout']) ? 'yes' : 'no';
