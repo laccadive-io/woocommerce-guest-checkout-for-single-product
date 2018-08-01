@@ -35,7 +35,7 @@ if (!defined('WPINC')) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('PLUGIN_NAME_VERSION', '1.0.0');
+define('WC_GUEST_CHECKOUT_INDIVIDUAL', '1.0.0');
 
 /**
  * The code that runs during plugin activation.
@@ -89,8 +89,8 @@ Woocommerce - Allow Guest Checkout for Individual Products
 -----------------------------------------------------------*/
 
 // Display Guest Checkout Field
-add_action('woocommerce_product_options_general_product_data', 'wc_guest_add_custom_general_fields');
-function wc_guest_add_custom_general_fields()
+add_action('woocommerce_product_options_general_product_data', 'wc_gcip_add_custom_general_fields');
+function wc_gcip_add_custom_general_fields()
 {
     global $woocommerce, $post;
 
@@ -110,16 +110,16 @@ function wc_guest_add_custom_general_fields()
 }
 
 // Save Guest Checkout Field
-add_action('woocommerce_process_product_meta', 'wc_guest_add_custom_general_fields_save');
-function wc_guest_add_custom_general_fields_save($post_id)
+add_action('woocommerce_process_product_meta', 'wc_gcip_add_custom_general_fields_save');
+function wc_gcip_add_custom_general_fields_save($post_id)
 {
     $woocommerce_checkbox = isset($_POST['_allow_guest_checkout']) ? 'yes' : 'no';
     update_post_meta($post_id, '_allow_guest_checkout', $woocommerce_checkbox);
 }
 
 // Enable Guest Checkout on Certain products
-add_filter('pre_option_woocommerce_enable_guest_checkout', 'wc_enable_guest_checkout_based_on_product');
-function wc_enable_guest_checkout_based_on_product($value)
+add_filter('pre_option_woocommerce_enable_guest_checkout', 'wc_gcip_enable_guest_checkout_based_on_product');
+function wc_gcip_enable_guest_checkout_based_on_product($value)
 {
 
     if (WC()->cart) {
