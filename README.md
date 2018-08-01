@@ -14,6 +14,10 @@ Yes it's available for WooCommerce Bookings (bookable product) as well!
 Go to WordPress dashboard > Products > Add New / Edit >  Under Product data section > Checkout  Allow Guest Checkout
 
 
-That's it!
 
+<img width="963" alt="screen shot 2018-08-01 at 12 13 34 pm" src="https://user-images.githubusercontent.com/24408261/43505881-e480dca4-9585-11e8-9794-5f369964eda2.png">
+
+
+
+That's it!
 
