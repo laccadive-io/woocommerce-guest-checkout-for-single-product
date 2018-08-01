@@ -82,53 +82,52 @@ function run_wc_guest_checkout_individual_product() {
 run_wc_guest_checkout_individual_product();
 
 
-// /*----------------------------------------------------------
-// Woocommerce - Allow Guest Checkout for Individual Products
-// -----------------------------------------------------------*/
+/*----------------------------------------------------------
+Woocommerce - Allow Guest Checkout for Individual Products
+-----------------------------------------------------------*/
 
-// // Display Guest Checkout Field
-// add_action( 'woocommerce_product_options_general_product_data', 'wc_guest_add_custom_general_fields' );
-// function wc_guest_add_custom_general_fields() {
-//   global $woocommerce, $post;
+// Display Guest Checkout Field
+add_action( 'woocommerce_product_options_general_product_data', 'wc_guest_add_custom_general_fields' );
+function wc_guest_add_custom_general_fields() {
+  global $woocommerce, $post;
   
-//   echo '<div class="options_group">';
+  echo '<div class="options_group">';
   
-//   // Checkbox
-//   woocommerce_wp_checkbox( 
-//   array( 
-// 	'id'            => '_allow_guest_checkout', 
-// 	//'wrapper_class' => 'show_if_simple', 
-// 	'wrapper_class' => array( 'show_if_simple', 'show_if_variable', 'show_if_grouped', 'show_if_external', 'show_if_booking' ),
-// 	'label'         => __('Checkout', 'woocommerce' ), 
-// 	'description'   => __('Allow Guest Checkout', 'woocommerce' ) 
-// 	)
-//    );
+  // Checkbox
+  woocommerce_wp_checkbox( 
+    array( 
+      'id'            => '_allow_guest_checkout',
+      'wrapper_class' => array( 'show_if_simple', 'show_if_variable', 'show_if_grouped', 'show_if_external', 'show_if_booking' ),
+      'label'         => __('Checkout', 'woocommerce' ), 
+      'description'   => __('Allow Guest Checkout', 'woocommerce' ) 
+    )
+  );
   
-//   echo '</div>';
-// }
+  echo '</div>';
+}
 
-// // Save Guest Checkout Field
-// add_action( 'woocommerce_process_product_meta', 'wc_guest_add_custom_general_fields_save' );
-// function wc_guest_add_custom_general_fields_save( $post_id ){
-// 	$woocommerce_checkbox = isset( $_POST['_allow_guest_checkout'] ) ? 'yes' : 'no';
-// 	update_post_meta( $post_id, '_allow_guest_checkout', $woocommerce_checkbox );
-// }
+// Save Guest Checkout Field
+add_action( 'woocommerce_process_product_meta', 'wc_guest_add_custom_general_fields_save' );
+function wc_guest_add_custom_general_fields_save( $post_id ){
+	$woocommerce_checkbox = isset( $_POST['_allow_guest_checkout'] ) ? 'yes' : 'no';
+	update_post_meta( $post_id, '_allow_guest_checkout', $woocommerce_checkbox );
+}
 
-// // Enable Guest Checkout on Certain products
-// add_filter( 'pre_option_woocommerce_enable_guest_checkout', 'wc_enable_guest_checkout_based_on_product' );
-// function wc_enable_guest_checkout_based_on_product( $value ) {
+// Enable Guest Checkout on Certain products
+add_filter( 'pre_option_woocommerce_enable_guest_checkout', 'wc_enable_guest_checkout_based_on_product' );
+function wc_enable_guest_checkout_based_on_product( $value ) {
 
-//   if ( WC()->cart ) {
-//     $cart = WC()->cart->get_cart();
-//     foreach ( $cart as $item ) {
-//       if ( get_post_meta( $item['product_id'], '_allow_guest_checkout', true ) == 'yes' ) {
-//         $value = "yes";
-//       } else {
-//         $value = "no";
-//         break;
-//       }
-//     }
-//   }
+  if ( WC()->cart ) {
+    $cart = WC()->cart->get_cart();
+    foreach ( $cart as $item ) {
+      if ( get_post_meta( $item['product_id'], '_allow_guest_checkout', true ) == 'yes' ) {
+        $value = "yes";
+      } else {
+        $value = "no";
+        break;
+      }
+    }
+  }
   
-//   return $value;
-// }
+  return $value;
+}
