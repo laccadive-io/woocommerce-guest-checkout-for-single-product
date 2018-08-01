@@ -1,13 +1,13 @@
 # WooCommerce-Guest-Checkout-for-Individual-Product
-An open sourced WooCommerce plugin which enables Guest Checkout for Individual Product easily by a checkbox from the product page.
+A simple wooCommerce plugin forked from [contemplate](https://gist.github.com/2adc7be2c72d585a07ac6f90b1f1e1b4.git). It enables for individuals Guest Checkout for Individual Product through a checkbox from the product page.
 
-By default, WooCommerce enables guest checkout for all the products. It was a pain if you want to enable it for specific / individual product. 
+By default, WooCommerce enables guest checkout for all the products. It would be a pain if you want to enable it for specific / individual product. 
 
 ### But not anymore!
-We have made it easy for the user to enable gues checkout for individual product by just checking a checkbox in WooCommerce product dashboard page.
+We have made it easy for the user to enable guest checkout for individual product by just checking a checkbox in WooCommerce product dashboard page.
 
-## WooCommerce Bookings?
-Yes it's available for WooCommerce Bookings (bookable product) as well!
+## Does it work for the premium plugin [WooCommerce Bookings](https://woocommerce.com/products/woocommerce-bookings/)?
+Yes it's available for [WooCommerce Bookings (bookable product)] (https://woocommerce.com/products/woocommerce-bookings/) as well!
 
 ### Usage
 
