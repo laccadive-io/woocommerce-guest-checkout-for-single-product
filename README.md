@@ -7,7 +7,7 @@ By default, WooCommerce enables guest checkout for all the products. It would be
 We have made it easy for the user to enable guest checkout for individual product by just checking a checkbox in WooCommerce product dashboard page.
 
 ## Does it work for the premium plugin [WooCommerce Bookings](https://woocommerce.com/products/woocommerce-bookings/)?
-Yes it's available for [WooCommerce Bookings (bookable product)] (https://woocommerce.com/products/woocommerce-bookings/) as well!
+Yes it's available for [WooCommerce Bookings](https://woocommerce.com/products/woocommerce-bookings/) bookable product as well!
 
 ### Usage
 
