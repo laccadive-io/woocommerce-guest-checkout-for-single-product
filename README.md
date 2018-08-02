@@ -20,7 +20,7 @@ From your WordPress dashboard
 
 
 
-<img width="963" alt="screen shot 2018-08-01 at 12 13 34 pm" src="https://user-images.githubusercontent.com/24408261/43505881-e480dca4-9585-11e8-9794-5f369964eda2.png">
+<img width="963" alt="woocommerce-guset-single" src="https://user-images.githubusercontent.com/24408261/43562674-807dedbc-963b-11e8-98de-769fcbdf0ad8.png">
 
 
 
