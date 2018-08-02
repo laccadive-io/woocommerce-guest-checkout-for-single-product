@@ -1,6 +1,6 @@
 === WooCommerce Guest Checkout for Single Product ===
 
-Contributors: hussain@laccadive.io
+Contributors: hussainthaj
 Plugin Name: WooCommerce Guest Checkout for Single Product
 Plugin URI: https://github.com/laccadive-io/woocommerce-guest-checkout-for-single-product
 Tags: wooCommerce, guest, checkout, product, single, individual
@@ -9,7 +9,6 @@ Author: Hussain Thajutheen
 Donate link: https://laccadive.io/contact/
 Requires at least: 3.6.0
 Tested up to: 4.9.7
-Stable tag: Plugin’s stable version
 Version: 1.0.0
 License: GPLv3 or later
 
