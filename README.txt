@@ -6,18 +6,16 @@ Plugin URI: https://github.com/laccadive-io/woocommerce-guest-checkout-for-singl
 Tags: wooCommerce, guest, checkout, product, single, individual
 Author URI: https://laccadive.io/
 Author: Hussain Thajutheen
-Donate link: https://laccadive.io/contact/
+Donate link: http://paypal.me/supportplugindev
 Requires at least: 3.6.0
 Tested up to: 4.9.7
 Version: 1.0.0
-License: GPLv3 or later
+License: GPLv3
 
-
-A simple wooCommerce plugin forked from contemplate. It enables for users Guest Checkout for Single Product through a checkbox from the product page.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+A simple wooCommerce plugin forked from contemplate. It enables for users Guest Checkout for Single Product through a checkbox from the product page. 
 
 
 == Installation ==
@@ -44,4 +42,4 @@ From your WordPress dashboard
 
 == Donations ==
 
-For donations please visit https://laccadive.io/contact/
+If you like the plugin, consider a donation to support further development. Click here http://paypal.me/supportplugindev
