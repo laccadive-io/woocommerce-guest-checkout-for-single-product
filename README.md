@@ -9,9 +9,14 @@ We have made it easy for the user to enable guest checkout for single product by
 ## Does it work for the premium plugin [WooCommerce Bookings](https://woocommerce.com/products/woocommerce-bookings/)?
 Yes it's available for [WooCommerce Bookings](https://woocommerce.com/products/woocommerce-bookings/) bookable product as well!
 
-### Usage
+### Installation
 
-Go to WordPress dashboard > Products > Add New / Edit >  Under Product data section > Checkout  Allow Guest Checkout
+From your WordPress dashboard
+
+1. **Visit** Plugins > Add New
+2. **Search** for "WooCommerce Guest Checkout for Single Product"
+3. **Activate** WooCommerce Guest Checkout for Single Product from your Plugins page
+4. **Products** > Add New / Edit >  Under Product data section > Checkout  Allow Guest Checkout
 
 
 
